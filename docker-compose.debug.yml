@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+  serempre:
+    image: serempre
+    build:
+      context: .
+      dockerfile: ./Dockerfile.debug
+    env_file: ./debug.env
+    ports:
+      - 3000:3000
+      - 9229:9229
+    command: ["npm", "run", "dev"]
